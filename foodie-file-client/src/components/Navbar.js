@@ -1,14 +1,15 @@
 import React from "react";
-import FoodieFileLogo from "../assets/Foodie-File-Logo.png";
+import FoodieFileLogo from "../assets/FF-Logo.png";
 import { Link } from "react-router-dom";
+import "../styles/Navbar.css";
 
 function Navbar() {
   return (
     <div className="navbar">
-      <div className="navbar__logo">
+      <div className="logo">
         <img src={FoodieFileLogo} alt="Foodie File Logo" />
       </div>
-      <div className="navbar__links">
+      <div className="links">
         <Link to="/"> Home </Link>
         <Link to="/recipes"> Recipes </Link>
         <Link to="/ingredients"> Ingredients </Link>
