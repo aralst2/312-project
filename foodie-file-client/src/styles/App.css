@@ -1,0 +1,40 @@
+.App {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+/* styles.css */
+
+/* Style for the container div */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Style for headings */
+h1 {
+  color: #333;
+}
+
+/* Style for paragraphs */
+p {
+  color: #666;
+}
+
+/* Style for links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
