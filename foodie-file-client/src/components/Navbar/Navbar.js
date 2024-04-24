@@ -1,7 +1,7 @@
 import React from "react";
-import FoodieFileLogo from "../assets/FF-Logo.png";
+import FoodieFileLogo from "../../assets/FF-Logo.png";
 import { Link } from "react-router-dom";
-import "../styles/Navbar.css";
+import "./Navbar.css";
 
 function Navbar() {
   return (
@@ -10,7 +10,7 @@ function Navbar() {
         <img src={FoodieFileLogo} alt="Foodie File Logo" />
       </div>
       <div className="links">
-        <Link to="/"> Home </Link>
+        <Link to="/home"> Home </Link>
         <Link to="/recipes"> Recipes </Link>
         <Link to="/ingredients"> Ingredients </Link>
         <Link to="/account"> Account </Link>
