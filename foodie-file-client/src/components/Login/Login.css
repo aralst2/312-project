@@ -1,0 +1,83 @@
+.split-screen {
+  display: flex;
+  margin-top: 10%;
+  background-color: #e8e8e8;
+  font-family: "Futura", sans-serif;
+  align-items: stretch;
+}
+
+.left-side {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.right-side {
+  width: 40%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+#text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffd858;
+  font-size: 2em;
+}
+
+#form {
+  text-align: center;
+  font-size: large;
+  width: auto;
+}
+
+.form-part {
+  margin-bottom: 15px;
+}
+
+.form-part label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-part input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-part input:focus {
+  outline: none;
+  border-color: black;
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #000000;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.help-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.help-actions a {
+  text-decoration: none;
+  color: black;
+}
