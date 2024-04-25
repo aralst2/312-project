@@ -12,6 +12,9 @@ const Login = () => {
         <div id="text-overlay">
           <h3>Where delicious recipes await</h3>
         </div>
+        <div className="text-overlay2">
+          Would you like to join? <a href="/register">Sign up!</a>{" "}
+        </div>
       </div>
 
       <div className="right-side">
@@ -31,6 +34,9 @@ const Login = () => {
           </button>
           <div className="help-actions">
             <a href="/forgot-password">Forgot Password?</a>{" "}
+          </div>
+          <div className="help-actions">
+            <a href="/home">Continue as a guest</a>{" "}
           </div>
         </form>
       </div>
