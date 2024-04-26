@@ -44,13 +44,13 @@
   transform: translateX(-50%);
   background-color: rgba(255, 255, 255, 0.5);
   color: #000000;
-  font-size: 20px;
-  padding: 8px 15px; /* Add padding around the text */
-  border-radius: 7px; /* Optional: if you want rounded corners */
+  padding: 8px 15px;
+  border-radius: 7px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: calc(70% - 40px);
   box-sizing: border-box;
   text-align: center;
+  font-size: medium;
 }
 
 .text-overlay2 a {

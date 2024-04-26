@@ -28,7 +28,9 @@ function Main() {
 
   return (
     <>
-      {location.pathname !== "/" && <Navbar />}
+      {location.pathname !== "/" && location.pathname !== "/register" && (
+        <Navbar />
+      )}
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />

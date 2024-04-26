@@ -13,7 +13,7 @@ const Login = () => {
           <h3>Where delicious recipes await</h3>
         </div>
         <div className="text-overlay2">
-          Would you like to join? <a href="/register">Sign up!</a>{" "}
+          Would you like to join? <a href="/register">Sign up here!</a>{" "}
         </div>
       </div>
 
@@ -23,11 +23,11 @@ const Login = () => {
           <h2>Log In</h2>
           <div className="form-part">
             <label htmlFor="Username">Username</label>
-            <input type="text" id="Username" />
+            <input type="text" id="Username" required="required" />
           </div>
           <div className="form-part">
             <label htmlFor="Password">Password</label>
-            <input type="password" id="Password" />
+            <input type="password" id="Password" required="required" />
           </div>
           <button type="submit" className="login-button">
             Login
