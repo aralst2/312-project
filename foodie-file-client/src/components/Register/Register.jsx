@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import CookingVideo from "../../assets/cooking-video-2.mp4";
 import "./Register.css";
@@ -8,6 +9,8 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,6 +23,9 @@ const Register = () => {
       })
       .then((response) => {
         console.log(response);
+        if (response.data.status === true) {
+          navigate("/home");
+        }
       })
       .catch((error) => {
         console.log(error);

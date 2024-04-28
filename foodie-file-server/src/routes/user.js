@@ -21,7 +21,7 @@ router.post("/register", async (req, res) => {
   });
 
   await newUser.save();
-  return res.status(201).json({ message: "User created successfully" });
+  return res.status(201).json({ status: true });
 });
 
 module.exports = router;
