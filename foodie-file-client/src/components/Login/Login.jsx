@@ -1,8 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import CookingVideo from "../../assets/cooking-video.mp4";
 import "./Login.css";
 
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+
+  axios.defaults.withCredentials = true;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:4500/auth/login", {
+        username,
+        password,
+      })
+      .then((response) => {
+        console.log(response);
+        if (response.data.status === true) {
+          navigate("/home");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="split-screen">
       <div className="left-side">
@@ -18,16 +45,26 @@ const Login = () => {
       </div>
 
       <div className="right-side">
-        <form id="form" className="login-form">
+        <form id="form" className="login-form" onSubmit={handleSubmit}>
           {" "}
           <h2>Log In</h2>
           <div className="form-part">
             <label htmlFor="Username">Username</label>
-            <input type="text" id="Username" required="required" />
+            <input
+              type="text"
+              id="Username"
+              required="required"
+              onChange={(e) => setUsername(e.target.value)}
+            />
           </div>
           <div className="form-part">
             <label htmlFor="Password">Password</label>
-            <input type="password" id="Password" required="required" />
+            <input
+              type="password"
+              id="Password"
+              required="required"
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
           <button type="submit" className="login-button">
             Login
