@@ -3,16 +3,22 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 const mongoose = require("mongoose");
+const userRoutes = require("./src/routes/user");
+const cookieParser = require("cookie-parser");
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    credentials: true,
+  })
+);
+app.use(cookieParser());
 
-const corsOptions = {
-  origin: "*",
-
-  // credentials: true,
-};
+//Routes
+app.use("/auth", userRoutes);
 
 const DB_URI = process.env.DB_CONNECTION;
 mongoose
@@ -24,10 +30,8 @@ mongoose
     console.error("Error connecting to MongoDB:", error);
   });
 
-app.use(cors(corsOptions));
-
 // Server initialization
-const port = 4500;
+const port = process.env.PORT || 4500;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
