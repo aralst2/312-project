@@ -8,10 +8,10 @@ import {
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./pages/Home";
-import Recipes from "./pages/Recipes";
-import Ingredients from "./pages/Ingredients";
+import Home from "./pages/Home/Home";
 import Account from "./pages/Account";
+import Recipes from "./pages/Recipes/Recipes";
+import Ingredients from "./pages/Ingredients/Ingredients";
 
 function App() {
   return (
@@ -35,9 +35,9 @@ function Main() {
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/account" element={<Account />} />
         <Route path="/recipes" element={<Recipes />} />
         <Route path="/ingredients" element={<Ingredients />} />
-        <Route path="/account" element={<Account />} />
       </Routes>
     </>
   );

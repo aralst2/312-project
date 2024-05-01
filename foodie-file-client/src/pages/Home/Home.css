@@ -1,0 +1,46 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5vh;
+}
+
+.home-button {
+  width: 90vh;
+  height: 80vh;
+  font-size: 4rem;
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  margin: 0 4vh;
+  transition: background-color 0.3s;
+}
+
+.home-button:hover {
+  opacity: 0.8;
+}
+
+#button1 {
+  background-image: url("../../assets/ingridients.jpg");
+  background-size: 130vh 95vh;
+  color: #ffdf0d;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#button2 {
+  background-image: url("../../assets/meal.jpg");
+  background-size: 120vh 80vh;
+  color: #ffdf0d;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+em {
+  font-size: 3rem;
+  color: black;
+  text-shadow: none;
+}
