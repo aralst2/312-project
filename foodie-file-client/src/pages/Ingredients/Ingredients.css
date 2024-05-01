@@ -1,0 +1,15 @@
+.page {
+  background-color: #eee;
+  height: 91vh;
+  width: 100%;
+}
+
+.input-field {
+  padding-top: 5vh;
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 200px;
+}
