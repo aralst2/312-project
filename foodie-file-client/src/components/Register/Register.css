@@ -1,6 +1,6 @@
 .register-split-screen {
   display: flex;
-  margin-top: 4%;
+  margin-top: 7%;
   background-color: #e8e8e8;
   font-family: "Futura", sans-serif;
   align-items: stretch;
@@ -42,7 +42,7 @@
 
 .register-text-overlay2 {
   position: absolute;
-  bottom: 65px;
+  bottom: 35px;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(255, 255, 255, 0.5);
