@@ -2,16 +2,12 @@ import React, { useState } from "react";
 import { FaArrowCircleUp } from "react-icons/fa";
 import "./SearchBar.css";
 
-const SearchBar = () => {
+const SearchBar = ({ onSearch }) => {
   const [input, setInput] = useState("");
-
-  const fetchData = (value) => {
-    // Fetch data from API
-  };
 
   const handleSearch = (value) => {
     setInput(value);
-    fetchData(value);
+    onSearch(value); // Pass the search query to the parent component
   };
 
   return (

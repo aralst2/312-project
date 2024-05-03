@@ -1,15 +1,41 @@
 .page {
-  background-color: #eee;
-  height: 91vh;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Set height of page to viewport height */
 }
 
 .input-field {
-  padding-top: 5vh;
-  width: 60%;
-  margin: auto;
+  height: 50vh; /* Height of the search bar */
+  margin-bottom: 20px;
+}
+
+.recipe-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  min-width: 200px;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /*margin-top: 20px;*/
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.recipe-list {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0;
+  margin: 0;
+  width: 100%; /* Ensure the list takes full width of container */
+}
+
+.recipe-list li {
+  margin-bottom: 20px; /* Add spacing between recipe items */
+}
+
+/* Hide scrollbar */
+.recipe-container::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar width */
+  background: transparent; /* Make scrollbar background transparent */
 }
