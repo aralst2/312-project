@@ -25,6 +25,8 @@ router.post("/register", async (req, res) => {
   return res.status(201).json({ status: true });
 });
 
+
+
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
 
@@ -43,7 +45,24 @@ router.post("/login", async (req, res) => {
     expiresIn: "1h",
   });
   res.cookie("token", token, { maxAge: 360000, httpOnly: true });
-  return res.json({ status: true, message: "login successfull" });
+
+  return res.status(200).json({ status: true, message: "Login successful", userId: user._id });
 });
+
+router.get('/:username', async (req, res) => {
+  try {
+    const { username } = req.params;
+    const user = await User.findOne({ username });
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.json(user);
+  } catch (error) {
+    console.error('Error fetching User Data:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
+
 
 module.exports = router;
