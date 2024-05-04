@@ -9,7 +9,7 @@ import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
-import Account from "./pages/Account";
+import Account from "./pages/Account/Account";
 import Recipes from "./pages/Recipes/Recipes";
 import Ingredients from "./pages/Ingredients/Ingredients";
 
