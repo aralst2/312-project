@@ -28,7 +28,7 @@ const Recipes = () => {
   };
 
   return (
-    <div className="page">
+    <div className="recipe-page">
       <div className="input-field">
         <SearchBar onSearch = {handleSearch}/>
       </div>
@@ -37,7 +37,7 @@ const Recipes = () => {
           <ul className="recipe-list">
             {recipes.map(recipe => (
               <li key={recipe._id}>
-                <h3>{recipe.name}</h3>
+                <h3>{recipe.title}</h3>
                 <p><strong>Ingredients:</strong> {recipe.ingredients.join(', ')}</p>
                 <p><strong>Instructions:</strong> {recipe.instructions}</p>
               </li>
