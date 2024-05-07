@@ -28,8 +28,6 @@ Make sure terminal path looks like:
 Input in server terminal:
 
 	npm install 
-	npm install mongoose
-	npm install dotenv mongoose
 
 Input in client side:
 
