@@ -13,8 +13,7 @@ const SearchBar = ({ onSearch }) => {
   return (
     <div className="input-wrapper">
       <FaArrowCircleUp id="search-icon" />
-      <input
-        className="input"
+      <input className="input"
         placeholder="Enter text..."
         value={input}
         onChange={(e) => handleSearch(e.target.value)}

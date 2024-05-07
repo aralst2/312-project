@@ -30,16 +30,16 @@ const Ingredients = () => {
   };
 
   return (
-    <div className="page">
+    <div className="ingred-page">
       <div className="input-field">
         <SearchBar onSearch = {handleSearch}/>
       </div>
-      <div className="recipe-container">
+      <div className="ingred-container">
           <h2>Ingredients</h2>
-          <ul className="recipe-list">
+          <ul className="ingred-list">
             {recipes.map(recipe => (
               <li key={recipe._id}>
-                <h3>{recipe.name}</h3>
+                <h3>{recipe.title}</h3>
                 <p><strong>Ingredients:</strong> {recipe.ingredients.join(', ')}</p>
               </li>
             ))}
