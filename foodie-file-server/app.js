@@ -6,9 +6,10 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 
 const userRoutes = require("./src/routes/user");
-const recipeRouter = require("./src/routes/recipe"); 
+const recipeRouter = require("./src/routes/recipe");
 const userInfo = require("./src/routes/user");
 const update = require("./src/routes/user");
+const openAI = require("./src/routes/openai");
 
 const cookieParser = require("cookie-parser");
 const app = express();
@@ -28,9 +29,8 @@ app.use(
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: {secure: process.env.NODE_ENV == 'production'},
-    maxAge: 60 * 60 * 1000 // 1 hour in milliseconds
-
+    cookie: { secure: process.env.NODE_ENV == "production" },
+    maxAge: 60 * 60 * 1000, // 1 hour in milliseconds
   })
 );
 
@@ -39,6 +39,7 @@ app.use("/auth", userRoutes);
 app.use("/recipes", recipeRouter); //Recipes
 app.use("/account", userInfo);
 app.use("/update", update);
+app.use("/openai", openAI);
 
 // Database connection
 const DB_URI = process.env.DB_CONNECTION;
@@ -56,4 +57,3 @@ const port = process.env.PORT || 4500;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
