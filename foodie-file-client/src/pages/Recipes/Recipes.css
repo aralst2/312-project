@@ -7,7 +7,7 @@
   flex-direction: column;
 }
 
-.recipe-container {
+.response-container {
   position: absolute;
   top: 125px;
   bottom: 25px;
@@ -21,23 +21,10 @@
   padding-right: 10px;
   margin-left: 20px;
   margin-right: 20px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-
-.recipe-list {
-  list-style-type: none; /* Remove default list styles */
-  padding: 0;
-  margin: 0;
-  width: 100%; /* Ensure the list takes full width of container */
-}
-
-.recipe-list li {
-  margin-bottom: 20px; /* Add spacing between recipe items */
-}
-
-/* Hide scrollbar */
-.recipe-container::-webkit-scrollbar {
-  width: 0; /* Remove scrollbar width */
-  background: transparent; /* Make scrollbar background transparent */
+.response-container::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }

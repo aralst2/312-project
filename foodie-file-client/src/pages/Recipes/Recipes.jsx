@@ -1,49 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from "react";
 import SearchBar from "../../components/Search-Bar/SearchBar";
+import axios from "axios";
 import "./Recipes.css";
 
 const Recipes = () => {
-  const [recipes, setRecipes] = useState([]);
-  const [filteredRecipes, setFilteredRecipes] = useState([]);
+  const [response, setResponse] = useState("");
 
-  useEffect(() => {
-    const fetchRecipes = async () => {
-      try {
-        const response = await fetch('http://localhost:4500/recipes');
-        const data = await response.json();
-        setRecipes(data);
-      } catch (error) {
-        console.error('Error fetching recipes:', error);
-      }
-    };
-
-    fetchRecipes();
-  }, []);
-
-  const handleSearch = (query) => {
-    const filtered = recipes.filter(recipe =>
-      recipe.name.toLowerCase().includes(query.toLowerCase())
-    );
-    setFilteredRecipes(filtered);
+  const handleSearch = async (input) => {
+    try {
+      const res = await axios.post("http://localhost:4500/openai/ask", {
+        question: input,
+      });
+      setResponse(res.data);
+    } catch (error) {
+      console.error("Failed to get the response:", error);
+      setResponse("Failed to fetch response.");
+    }
   };
 
   return (
     <div className="recipe-page">
       <div className="input-field">
-        <SearchBar onSearch = {handleSearch}/>
+        <SearchBar onSearch={handleSearch} />
       </div>
-      <div className="recipe-container">
-          <h2>Recipes</h2>
-          <ul className="recipe-list">
-            {recipes.map(recipe => (
-              <li key={recipe._id}>
-                <h3>{recipe.title}</h3>
-                <p><strong>Ingredients:</strong> {recipe.ingredients.join(', ')}</p>
-                <p><strong>Instructions:</strong> {recipe.instructions}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div className="response-container">{response && <p>{response}</p>}</div>
     </div>
   );
 };
