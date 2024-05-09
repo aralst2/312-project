@@ -6,7 +6,6 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 
 const userRoutes = require("./src/routes/user");
-const recipeRouter = require("./src/routes/recipe");
 const userInfo = require("./src/routes/user");
 const update = require("./src/routes/user");
 const openAI = require("./src/routes/openai");
@@ -36,7 +35,6 @@ app.use(
 
 // Routes
 app.use("/auth", userRoutes);
-app.use("/recipes", recipeRouter); //Recipes
 app.use("/account", userInfo);
 app.use("/update", update);
 app.use("/openai", openAI);
