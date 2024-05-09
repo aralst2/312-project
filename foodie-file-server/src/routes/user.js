@@ -128,44 +128,6 @@ router.put("/", verifyToken, async (req, res) => {
   }
 });
 
-/*
-try{
-    const { newUsername, newEmail, currentPassword, newPassword, userId } = req.body;
-    console.log("Req.body: ", req.body);
-
-    const user = await User.findById(userId);
-    console.log("This is user: ", user);
-    if (!user){
-      return res.status(404).json({ message: "User not found" });
-    } 
-    if (newUsername) user.username = newUsername;
-    if (newEmail) user.email = newEmail;
-    
-    
-    const validPassword = await bcrypt.compare(currentPassword, user.password);
-    if (!validPassword) {
-      return res.status(401).json({ message: "Incorrect current password" });
-    }
-    console.log("Password Matches", validPassword);
-    if (newPassword) {
-      // Check if newPassword is different from current password
-      if (currentPassword == newPassword) {
-        return res.status(400).json({ message: "New password must be different from current password" });
-      } 
-      const hashedPassword = await bcrypt.hash(newPassword, 10);
-      user.password = hashedPassword;
-    }
-    console.log(user);
-    await user.save();
-    //return res.status(200).json()
-    res.status(200).json({ status: true, message: "User information updated successfully" });
-  } catch (error) {
-    console.error("Error updating user information:", error);
-    res.status(500).json({ message: "Internal Server Error" });
-  
-  }
-*/
-
 
 
 module.exports = router;
